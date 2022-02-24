@@ -1,0 +1,208 @@
+/* estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+body {
+    width: 100%;
+    height: 100vh;
+    background-color: #000;
+}
+.border {
+    background-color: rgb(40, 40, 40);
+    color: #d3d3d3;
+}
+header {
+    background-image: linear-gradient(90deg, #d53369 0%, #daae51 100%);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h1 {
+    margin-top: 40px;
+    padding: 15px ;
+    font-size:3rem;
+}
+    
+
+ p  { 
+     color: azure;
+     padding: 20px;
+ }
+        
+
+    
+
+
+article {
+    padding: 5px;
+    background-color: rgb(31, 31, 31);
+    border-radius: 3px;
+    border: solid 5px rgb(31, 31, 31);
+    color: #fff;
+}
+.imgArticulo {
+    width: 275px;
+    height: 350px;
+}
+nav {
+    padding: 10px;
+}
+span {
+    background-color:deeppink;
+    margin-bottom: 5px;
+    padding: 10px 25px;
+    text-align: center;
+}
+span:hover {
+    border-left: solid 5px rgb(255, 255, 255);
+    background-color: rgb(255, 255, 255);
+}
+span:active {
+    background-color: rgb(248, 4, 134);
+}
+/* ENLACES */
+a:link {
+    color: #fff;
+}
+a:hover {
+    color: rgb(70, 38, 67);
+}
+a:visited {
+    color: rgb(201, 153, 161);
+}
+
+aside { 
+    background-image: linear-gradient(90deg, #d53369 0%, #daae51 100%);
+    font-size: 1rem;
+    padding: 10px;
+    text-align: center;
+}
+footer {
+    padding: 20px;
+    text-align: center;
+    font-size: 0.5rem;
+    opacity: 0.5;
+}
+
+/* GRID por AREAS */
+#gridAreas {
+    display: grid;
+    /* 3 columnas y 4 filas */
+    grid-template-areas: 
+    "menu cabeza cabeza"/* fila 1 */ 
+    "menu productos lateral" /* fila 2*/
+    "menu servicios lateral"/* fila 3 */
+    "menu pie pie"/* fila 4 */
+    ;
+    /* Tamaño */
+    grid-template-columns: 15% auto 20%;
+    grid-template-rows: 1fr 3fr 3fr 10%;
+    grid-column-gap: 10px;
+    grid-row-gap: 5px;
+}
+/* Nombrar cada Area */
+header {
+    grid-area: cabeza;
+ }
+ footer {
+    grid-area: pie;
+ }
+#productos {
+    grid-area: productos;     
+ }
+#servicios {
+    grid-area: servicios;     
+ }
+ nav {
+    grid-area: menu;
+ }
+ aside {
+    grid-area: lateral;
+ }
+ 
+
+ /* FLEX */
+ .flexMenu {
+     display: flex;
+     flex-direction: column;
+ }
+ .flexHeader {
+     display: flex;
+     flex-flow: row wrap;
+     justify-content: center;
+     align-items: center;
+ }
+ .flexProductos {
+     display: flex;
+ }
+
+ /* MEDIA QUERIES */
+
+/* TABLET */
+@media (min-width: 481px) and (max-width: 1023px) {
+    /* GRID por AREAS */
+    #gridAreas {
+        display: grid;
+        /* 3 columnas y 4 filas */
+        grid-template-areas: 
+        "menu menu"
+        "cabeza cabeza"/* fila 1 */ 
+        "productos productos" /* fila 2*/
+        "servicios lateral"/* fila 3 */
+        "pie pie"/* fila 4 */
+        ;
+        /* Tamaño */
+        grid-template-columns: 50% auto;
+        grid-template-rows: 1fr 1fr 3fr 3fr 10%;
+        grid-column-gap: 10px;
+        grid-row-gap: 5px;
+    }
+     /* FLEX */
+    .flexMenu {
+        display: flex;
+        flex-direction: row;
+
+    }
+    span {
+        margin-left: 5px;
+        padding: 10px;
+        width: 100px;
+    }
+    span:hover {
+        border-left: solid 5px pink;
+        background-color: rgb(230, 77, 158);
+    }
+}
+/* SMARTPHONE */
+@media (max-width: 480px){
+    /* GRID por AREAS */
+    #gridAreas {
+        display: grid;
+        /* 3 columnas y 4 filas */
+        grid-template-areas: 
+        "cabeza"/* fila 1 */ 
+        "menu"
+        "productos"
+        "lateral" /* fila 2*/
+        "servicios"/* fila 3 */
+        "pie"/* fila 4 */
+        ;
+        /* Tamaño */
+        grid-template-columns: 100%;
+        grid-template-rows: 1fr 1fr 3fr 3fr 10%;
+        grid-column-gap: 10px;
+        grid-row-gap: 5px;
+    }
+    header {
+        text-align: center;
+    }
+    /* FLEX */
+    .flexProductos {
+        display: flex;
+        flex-direction: column;
+    }
+}
